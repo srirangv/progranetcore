@@ -3,7 +3,7 @@ version : '3'
 services:
   locationsapi:
     image: locationsapi
-    hostname: locationsapi
+    container_name: locationsapi
     build:
       context: ./
       dockerfile: pulsar/Dockerfile
@@ -14,7 +14,7 @@ services:
 
   prometheus:
     image: prom/prometheus
-    hostname: locationsprom
+    container_name: locationsprom
     restart: always
     ports:
       - 9090:9090
