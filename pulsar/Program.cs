@@ -5,7 +5,7 @@ using System.Threading;
 class Program
 {
     private static readonly Counter TickTock =
-        Metrics.CreateCounter("sampleapp_ticks_total", "Just keeps on ticking");
+        Metrics.CreateCounter("pulsar_ticks_total", "Just keeps on ticking");
 
     static void Main()
     {
@@ -15,7 +15,7 @@ class Program
         while (true)
         {
             TickTock.Inc();
-            Thread.Sleep(TimeSpan.FromSeconds(1));
+            Thread.Sleep(TimeSpan.FromSeconds(10));
         }
     }
 }

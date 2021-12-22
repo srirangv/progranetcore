@@ -8,9 +8,16 @@ global:
 
 # A scrape configuration containing exactly one endpoint to scrape:
 scrape_configs:
-  - job_name: 'locationsapi-read-prometheus'
+  - job_name: 'pulsar-metrics'
     # metrics_path defaults to '/metrics'
     static_configs:
     # replace the IP with your local IP for development
     # localhost is not it, as that is w/in the container :)
-    - targets: ['locationsapi:1234']
+    - targets: ['pulsar:1234']
+
+  - job_name: 'chetak-metrics'
+    # metrics_path defaults to '/metrics'
+    static_configs:
+    # replace the IP with your local IP for development
+    # localhost is not it, as that is w/in the container :)
+    - targets: ['chetak:1235']
